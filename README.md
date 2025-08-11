@@ -1,117 +1,105 @@
-# 🚀 SQL Bot — AI Database Assistant
-**SQL Bot is your personal AI-powered database assistant that lets you query and explore data just by asking questions in plain English.
-Whether your data is in MySQL, CSV, or Excel, this bot will handle it — generating optimized SQL queries and even explaining complex ones.
+# 🤖 SQL Bot — AI Database Assistant
 
-# ✨ Key Features
-📂 Multiple Data Sources
-🔗 MySQL Connection — Connect to any live MySQL database securely.
+SQL Bot is your personal AI-powered database assistant that lets you query and explore data just by asking questions in plain English. Whether your data is in MySQL, CSV, or Excel, this bot will handle it — generating optimized SQL queries and even explaining complex ones.
 
-📄 CSV & Excel Upload — Instantly load and query uploaded files.
+-----
 
-📜 Schema Mode — Paste CREATE TABLE SQL and start asking questions without any data upload.
+## ✨ Key Features
 
-🤖 Smart AI Capabilities
-Text ➡ SQL — Ask “Show top 5 highest selling products” and get a ready-to-run SQL query.
+  - **Multiple Data Sources**
+      - **MySQL Connection:** Connect to any live MySQL database securely.
+      - **CSV & Excel Upload:** Instantly load and query uploaded files.
+      - **Schema Mode:** Paste `CREATE TABLE` SQL and start asking questions without any data upload.
+  - **Smart AI Capabilities**
+      - **Text ➡ SQL:** Ask “*Show top 5 highest selling products*” and get a ready-to-run SQL query.
+      - **SQL ➡ Text:** Paste a query and get a beginner-friendly explanation.
+      - **General Q\&A:** Beyond SQL, you can ask regular questions too.
+  - **Modern Interactive UI**
+      - Built with **Streamlit** for a smooth chat-like experience.
+      - Simple sidebar for source selection & schema viewing.
+      - Real-time SQL generation & execution.
 
-SQL ➡ Text — Paste a query and get a beginner-friendly explanation.
+-----
 
-General Q&A — Beyond SQL, you can ask regular questions too.
+## 🛠️ Tech Stack
 
-Sample Outputs — Shows realistic dummy data for better understanding.
+| Category | Tools & Technologies |
+| :--- | :--- |
+| **Languages** | Python |
+| **Frontend** | Streamlit |
+| **AI Models** | Ollama + llama3.1:8b |
+| **Libraries** | Pandas, SQLAlchemy, LangChain, MySQL Connector |
+| **Data Handling** | CSV, Excel, MySQL |
+| **Version Control**| GitHub |
 
-🖥 Modern Interactive UI
-Built with Streamlit for a smooth chat-like experience.
+-----
 
-Simple sidebar for source selection & schema viewing.
+## 📦 Installation & Setup
 
-Real-time SQL generation & execution.
+1.  **Create Virtual Environment**
 
-🛠 Tech Stack
-Category	Tools & Technologies
-Languages	Python
-Frontend	Streamlit
-AI Models	Ollama + llama3.1:8b
-Libraries	Pandas, SQLAlchemy, LangChain, MySQL Connector
-Data Handling	CSV, Excel, MySQL
-Version Control	GitHub
+    ```bash
+    python -m venv venv
+    ```
 
-📦 Installation & Setup
-1️⃣ Create Virtual Environment
-bash
-Copy
-Edit
-python -m venv venv
-Activate it:
+    Activate it:
 
-bash
-Copy
-Edit
-# Windows
-venv\Scripts\activate
-# macOS/Linux
-source venv/bin/activate
-2️⃣ Install Dependencies
-bash
-Copy
-Edit
-pip install -r requirements.txt
-3️⃣ Install & Start Ollama
-Download the model:
+      - **Windows:** `venv\Scripts\activate`
+      - **macOS/Linux:** `source venv/bin/activate`
 
-bash
-Copy
-Edit
-ollama pull llama3.1:8b
-Keep Ollama running in the background.
+2.  **Install Dependencies**
 
-4️⃣ Launch the App
-bash
-Copy
-Edit
-streamlit run app.py
-Open in your browser and start chatting with your database.
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-📖 How to Use
-Select a Data Source
-Choose between:
+3.  **Install & Start Ollama**
+    Download the model:
 
-Connect to MySQL — enter DB credentials.
+    ```bash
+    ollama pull llama3.1:8b
+    ```
 
-Upload CSV/Excel — instantly query uploaded data.
+    Keep the Ollama application running in the background.
 
-Schema Mode — paste CREATE TABLE statements.
+4.  **Launch the App**
 
-View Current Schema
-See all tables & columns for reference.
+    ```bash
+    streamlit run app.py
+    ```
 
-Chat with SQL Bot
-Ask questions, paste SQL for explanations, or explore your data.
+    Open the provided URL in your browser and start chatting with your database.
 
-Get Results
+-----
 
-Generated SQL query.
+## 📖 How to Use
 
-AI explanation.
+  - **Select a Data Source:** Choose between connecting to MySQL, uploading a file, or providing a schema in text mode.
+  - **View Current Schema:** See all tables & columns for reference in the sidebar.
+  - **Chat with SQL Bot:** Ask questions, paste SQL for explanations, or explore your data.
+  - **Get Results:** The bot provides the generated SQL query, an AI explanation, a sample table, and live DB output if connected.
 
-Dummy sample table.
+-----
 
-Live DB output (if connected).
+## 📂 Project Structure
 
-📂 Project Structure
-bash
-Copy
-Edit
+```
 sql-bot/
 ├── utils/
-│   ├── __init__.py        # Package initializer
-│   ├── database.py        # DB connection handling
-│   ├── file_processor.py  # CSV/Excel handling
-│   └── llm_handler.py     # AI prompt & model logic
-├── app.py                 # Main Streamlit app
-├── requirements.txt       # Dependencies
-└── README.md              # Documentation
-🧠 Example Queries
-You Ask	Bot Generates
-“Show me the top 10 customers by spending”	SELECT customer_id, SUM(amount) AS total_spent FROM sales GROUP BY customer_id ORDER BY total_spent DESC LIMIT 10;
-“Explain: SELECT COUNT(*) FROM orders WHERE status='Pending';”	Counts all orders where the status is ‘Pending’.
+│   ├── __init__.py         # Package initializer
+│   ├── database.py       # DB connection handling
+│   ├── file_processor.py   # CSV/Excel handling
+│   └── llm_handler.py      # AI prompt & model logic
+├── app.py                  # Main Streamlit app
+├── requirements.txt        # Dependencies
+└── README.md               # Documentation
+```
 
+-----
+
+## 🧠 Example Queries
+
+| You Ask | Bot Generates |
+| :--- | :--- |
+| “Show me the top 10 customers by spending” | `SELECT customer_id, SUM(amount) AS total_spent FROM sales GROUP BY customer_id ORDER BY total_spent DESC LIMIT 10;` |
+| “Explain: `SELECT COUNT(*) FROM orders WHERE status='Pending';`” | This query counts all orders where the status is ‘Pending’. |
