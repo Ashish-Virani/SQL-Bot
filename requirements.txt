@@ -1,0 +1,7 @@
+streamlit
+ollama
+langchain-community
+pandas
+openpyxl
+SQLAlchemy
+mysql-connector-python
