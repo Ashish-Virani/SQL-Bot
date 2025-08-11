@@ -1,4 +1,4 @@
-🤖 SQL Bot: Your AI Database Assistant
+##🤖 SQL Bot: Your AI Database Assistant
 SQL Bot is an intelligent, conversational application that allows you to interact with your databases using natural language. Built with Python and Streamlit, it leverages the power of local large language models (LLMs) through Ollama to translate your questions into executable SQL queries and explain complex queries in simple terms.
 
 This tool is designed for data analysts, developers, and anyone who wants to access database information without writing SQL manually.
@@ -44,7 +44,7 @@ Follow these steps to set up and run the SQL Bot on your local machine.
 
 ### Prerequisites
 Make sure you have the following installed:
-
+Ollama
 Python 3.9+
 
 ### 1. Clone the Repository
@@ -61,8 +61,7 @@ Bash
 
 # Create a virtual environment
 python -m venv venv
-
-# Activate it
+Activate it
 # On Windows
 venv\Scripts\activate
 # On macOS/Linux
@@ -71,13 +70,11 @@ source venv/bin/activate
 Install all the required Python packages from the requirements.txt file.
 
 Bash
-
 pip install -r requirements.txt
 ### 4. Download the Ollama Model
 Pull the llama3.1:8b model so the application can use it.
 
 Bash
-
 ollama pull llama3.1:8b
 Ensure the Ollama application is running in the background.
 
