@@ -1,8 +1,8 @@
-🚀 SQL Bot — AI Database Assistant
-SQL Bot is your personal AI-powered database assistant that lets you query and explore data just by asking questions in plain English.
+# 🚀 SQL Bot — AI Database Assistant
+**SQL Bot is your personal AI-powered database assistant that lets you query and explore data just by asking questions in plain English.
 Whether your data is in MySQL, CSV, or Excel, this bot will handle it — generating optimized SQL queries and even explaining complex ones.
 
-✨ Key Features
+# ✨ Key Features
 📂 Multiple Data Sources
 🔗 MySQL Connection — Connect to any live MySQL database securely.
 
