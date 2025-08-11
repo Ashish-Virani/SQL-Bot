@@ -1,121 +1,117 @@
-##🤖 SQL Bot: Your AI Database Assistant
-SQL Bot is an intelligent, conversational application that allows you to interact with your databases using natural language. Built with Python and Streamlit, it leverages the power of local large language models (LLMs) through Ollama to translate your questions into executable SQL queries and explain complex queries in simple terms.
+🚀 SQL Bot — AI Database Assistant
+SQL Bot is your personal AI-powered database assistant that lets you query and explore data just by asking questions in plain English.
+Whether your data is in MySQL, CSV, or Excel, this bot will handle it — generating optimized SQL queries and even explaining complex ones.
 
-This tool is designed for data analysts, developers, and anyone who wants to access database information without writing SQL manually.
+✨ Key Features
+📂 Multiple Data Sources
+🔗 MySQL Connection — Connect to any live MySQL database securely.
 
-## ✨ Features
-Multiple Data Sources:
+📄 CSV & Excel Upload — Instantly load and query uploaded files.
 
-Direct MySQL Connection: Securely connect to your live MySQL databases.
+📜 Schema Mode — Paste CREATE TABLE SQL and start asking questions without any data upload.
 
-File Upload: Upload CSV or XLSX files, which are instantly loaded into a temporary, queryable database.
+🤖 Smart AI Capabilities
+Text ➡ SQL — Ask “Show top 5 highest selling products” and get a ready-to-run SQL query.
 
-Schema-Only Mode: Provide a CREATE TABLE schema, and the bot will generate queries without needing a live connection.
+SQL ➡ Text — Paste a query and get a beginner-friendly explanation.
 
-Intelligent AI Core: Powered by llama3.1:8b, the bot can handle a variety of tasks:
+General Q&A — Beyond SQL, you can ask regular questions too.
 
-Text-to-SQL: Ask a question like "show me the total sales last month," and get a ready-to-run SQL query.
+Sample Outputs — Shows realistic dummy data for better understanding.
 
-SQL-to-Text: Paste a complex SQL query to receive a step-by-step explanation of what it does.
+🖥 Modern Interactive UI
+Built with Streamlit for a smooth chat-like experience.
 
-General Q&A: Ask off-topic questions and receive helpful answers.
+Simple sidebar for source selection & schema viewing.
 
-Rich, Data-Driven Examples: When generating a query, the bot also creates and displays dummy data to illustrate exactly how the query works and what the output will look like.
+Real-time SQL generation & execution.
 
-Interactive UI: A clean and user-friendly web interface built with Streamlit makes it easy to configure your data source and chat with the bot.
+🛠 Tech Stack
+Category	Tools & Technologies
+Languages	Python
+Frontend	Streamlit
+AI Models	Ollama + llama3.1:8b
+Libraries	Pandas, SQLAlchemy, LangChain, MySQL Connector
+Data Handling	CSV, Excel, MySQL
+Version Control	GitHub
 
-## 🛠️ Technology Stack
-Backend: Python
-
-Frontend: Streamlit
-
-AI/LLM: Ollama with llama3.1:8b
-
-Core Libraries:
-
-langchain-community for LLM and database integration.
-
-pandas for data manipulation.
-
-sqlalchemy and mysql-connector-python for database connections.
-
-## 🚀 Getting Started
-Follow these steps to set up and run the SQL Bot on your local machine.
-
-### Prerequisites
-Make sure you have the following installed:
-Ollama
-Python 3.9+
-
-### 1. Clone the Repository
-Clone this project to your local machine.
-
-Bash
-
-git clone https://your-repository-url/sql-bot.git
-cd sql-bot
-### 2. Set Up a Virtual Environment
-It's highly recommended to use a virtual environment to manage project dependencies.
-
-Bash
-
-# Create a virtual environment
+📦 Installation & Setup
+1️⃣ Create Virtual Environment
+bash
+Copy
+Edit
 python -m venv venv
-Activate it
-# On Windows
+Activate it:
+
+bash
+Copy
+Edit
+# Windows
 venv\Scripts\activate
-# On macOS/Linux
+# macOS/Linux
 source venv/bin/activate
-### 3. Install Dependencies
-Install all the required Python packages from the requirements.txt file.
-
-Bash
+2️⃣ Install Dependencies
+bash
+Copy
+Edit
 pip install -r requirements.txt
-### 4. Download the Ollama Model
-Pull the llama3.1:8b model so the application can use it.
+3️⃣ Install & Start Ollama
+Download the model:
 
-Bash
+bash
+Copy
+Edit
 ollama pull llama3.1:8b
-Ensure the Ollama application is running in the background.
+Keep Ollama running in the background.
 
-### 5. Run the Application
-Launch the Streamlit app.
-
-Bash
-
+4️⃣ Launch the App
+bash
+Copy
+Edit
 streamlit run app.py
-Your web browser should automatically open to the application's URL.
+Open in your browser and start chatting with your database.
 
-## 📖 How to Use
-Select a Data Source: Use the sidebar on the left to choose how you want to provide data.
+📖 How to Use
+Select a Data Source
+Choose between:
 
-Connect to MySQL: Enter your database credentials and click "Connect".
+Connect to MySQL — enter DB credentials.
 
-Upload a File: Upload a CSV or XLSX file, give your data a table name, and click "Load Data".
+Upload CSV/Excel — instantly query uploaded data.
 
-Provide Schema Text: Paste one or more CREATE TABLE statements and click "Set Schema".
+Schema Mode — paste CREATE TABLE statements.
 
-View Schema: Once a data source is configured, you can expand the "View Current Schema" section to see the tables and columns the bot is aware of.
+View Current Schema
+See all tables & columns for reference.
 
-Chat with the Bot: Type your question into the chat input at the bottom of the page.
+Chat with SQL Bot
+Ask questions, paste SQL for explanations, or explore your data.
 
-Ask a question about your data (e.g., "What is the average rating?").
+Get Results
 
-Provide a SQL query for the bot to explain.
+Generated SQL query.
 
-Ask a general knowledge question.
+AI explanation.
 
-Get Results: The bot will respond with the generated SQL, an explanation, and an illustrative example. If you have a live database connection, it will also execute the query and display the results in a table.
+Dummy sample table.
 
-## 📁 Project Structure
-The project is organized into a main application file and a utils directory for modular, reusable code.
+Live DB output (if connected).
 
+📂 Project Structure
+bash
+Copy
+Edit
 sql-bot/
 ├── utils/
-│   ├── __init__.py           # Makes 'utils' a Python package
-│   ├── database.py         # Handles all database connections
-│   ├── file_processor.py   # Processes uploaded CSV/XLSX files
-│   └── llm_handler.py        # Contains all LLM prompt and API logic
-├── app.py                    # The main Streamlit application file
-├── requirements.txt          # A list of all Python dependencies
-└── README.md                 # This file
+│   ├── __init__.py        # Package initializer
+│   ├── database.py        # DB connection handling
+│   ├── file_processor.py  # CSV/Excel handling
+│   └── llm_handler.py     # AI prompt & model logic
+├── app.py                 # Main Streamlit app
+├── requirements.txt       # Dependencies
+└── README.md              # Documentation
+🧠 Example Queries
+You Ask	Bot Generates
+“Show me the top 10 customers by spending”	SELECT customer_id, SUM(amount) AS total_spent FROM sales GROUP BY customer_id ORDER BY total_spent DESC LIMIT 10;
+“Explain: SELECT COUNT(*) FROM orders WHERE status='Pending';”	Counts all orders where the status is ‘Pending’.
+
